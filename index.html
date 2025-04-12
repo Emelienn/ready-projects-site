@@ -5,111 +5,179 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Готовые проекты</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap" rel="stylesheet">
     <style>
         body {
-            background: linear-gradient(to bottom, #f5f4ff, #ffffff);
-            font-family: 'Segoe UI', sans-serif;
+            margin: 0;
+            font-family: 'Inter', sans-serif;
+            background: radial-gradient(circle at top left, #ece9ff, #f9f9ff);
+            color: #212529;
         }
 
-        h1 {
-            text-align: center;
-            margin-top: 40px;
-            margin-bottom: 60px;
+        .navbar {
+            background: rgba(0, 0, 0, 0.7);
+            backdrop-filter: blur(10px);
+        }
+
+        .navbar-brand {
+            font-weight: 800;
+            font-size: 1.5rem;
+            color: white !important;
+        }
+
+        h1.section-title {
             font-weight: 700;
+            text-align: center;
+            margin: 80px 0 40px;
+            font-size: 2.8rem;
         }
 
-        .project-card {
+        .card {
+            background: rgba(255, 255, 255, 0.85);
+            border: none;
             border-radius: 20px;
-            padding: 20px;
-            box-shadow: 0 8px 24px rgba(0, 0, 0, 0.08);
-            background-color: white;
-            transition: transform 0.3s ease;
+            box-shadow: 0 20px 30px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s, box-shadow 0.3s;
         }
 
-        .project-card:hover {
-            transform: translateY(-5px);
+        .card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 30px 40px rgba(0, 0, 0, 0.15);
+        }
+
+        .card img {
+            border-top-left-radius: 20px;
+            border-top-right-radius: 20px;
+            object-fit: cover;
+            height: 200px;
         }
 
         .tech-tags span {
-            margin-right: 5px;
-            font-size: 14px;
+            margin-right: 6px;
+            font-size: 13px;
         }
 
         .download-btn {
-            background-color: #b18cff;
+            background: linear-gradient(to right, #a76bff, #b18cff);
             border: none;
             border-radius: 12px;
-            font-weight: 500;
-            font-size: 16px;
-            padding: 10px 24px;
             color: white;
+            padding: 10px 20px;
+            font-weight: 600;
+            font-size: 15px;
         }
 
         .download-btn:hover {
-            background-color: #9d6dff;
+            opacity: 0.9;
         }
 
-        .card-img-top {
-            border-radius: 12px;
-            margin-bottom: 15px;
-            object-fit: cover;
-            height: 160px;
-            width: 100%;
+        .about-section {
+            padding: 60px 0;
+            background: #f5f5fc;
+        }
+
+        .footer {
+            background: #1c1c1c;
+            color: #aaa;
+            padding: 30px 0;
+        }
+
+        .footer a {
+            color: #ccc;
+            text-decoration: none;
+        }
+
+        .footer a:hover {
+            text-decoration: underline;
         }
     </style>
 </head>
 <body>
 
-    <div class="container">
-        <h1>Готовые проекты</h1>
+    <!-- Навбар -->
+    <nav class="navbar navbar-expand-lg navbar-dark fixed-top">
+        <div class="container">
+            <a class="navbar-brand" href="#">DevHub</a>
+        </div>
+    </nav>
+
+    <!-- Витрина -->
+    <div class="container mt-5 pt-5">
+        <h1 class="section-title">Готовые проекты</h1>
         <div class="row g-4 justify-content-center">
 
-            <!-- Проект 1 -->
+            <!-- Карточка 1 -->
             <div class="col-md-4">
-                <div class="project-card text-center">
-                    <img src="images/shop-preview.jpg" alt="Интернет-магазин" class="card-img-top">
-                    <h5>Интернет-магазин</h5>
-                    <p>Готовый шаблон магазина с каталогом и корзиной</p>
-                    <div class="tech-tags mb-3">
-                        <span class="badge bg-light text-dark">HTML</span>
-                        <span class="badge bg-light text-dark">CSS</span>
-                        <span class="badge bg-light text-dark">Bootstrap</span>
+                <div class="card text-center">
+                    <img src="images/shop-preview.jpg" class="card-img-top" alt="Интернет-магазин">
+                    <div class="card-body">
+                        <h5 class="card-title">Интернет-магазин</h5>
+                        <p class="card-text">Готовый шаблон магазина с каталогом и корзиной.</p>
+                        <div class="tech-tags mb-3">
+                            <span class="badge bg-light text-dark">HTML</span>
+                            <span class="badge bg-light text-dark">CSS</span>
+                            <span class="badge bg-light text-dark">Bootstrap</span>
+                        </div>
+                        <a href="downloads/shop.zip" class="btn download-btn">Скачать</a>
                     </div>
-                    <a href="downloads/shop.zip" class="btn download-btn">Скачать</a>
                 </div>
             </div>
 
-            <!-- Проект 2 -->
+            <!-- Карточка 2 -->
             <div class="col-md-4">
-                <div class="project-card text-center">
-                    <img src="images/repair-preview.jpg" alt="Сайт ремонтного центра" class="card-img-top">
-                    <h5>Сайт ремонтного центра</h5>
-                    <p>Одностраничник для сервисного центра с формой обратной связи</p>
-                    <div class="tech-tags mb-3">
-                        <span class="badge bg-light text-dark">HTML</span>
-                        <span class="badge bg-light text-dark">CSS</span>
+                <div class="card text-center">
+                    <img src="images/repair-preview.jpg" class="card-img-top" alt="Сайт ремонтного центра">
+                    <div class="card-body">
+                        <h5 class="card-title">Сайт ремонтного центра</h5>
+                        <p class="card-text">Одностраничник для сервисного центра с формой обратной связи.</p>
+                        <div class="tech-tags mb-3">
+                            <span class="badge bg-light text-dark">HTML</span>
+                            <span class="badge bg-light text-dark">CSS</span>
+                        </div>
+                        <a href="downloads/repair.zip" class="btn download-btn">Скачать</a>
                     </div>
-                    <a href="downloads/repair.zip" class="btn download-btn">Скачать</a>
                 </div>
             </div>
 
-            <!-- Проект 3 -->
+            <!-- Карточка 3 -->
             <div class="col-md-4">
-                <div class="project-card text-center">
-                    <img src="images/realestate-preview.jpg" alt="Агентство недвижимости" class="card-img-top">
-                    <h5>Агентство недвижимости</h5>
-                    <p>Многостраничный сайт с фильтрацией объектов и адаптивной вёрсткой</p>
-                    <div class="tech-tags mb-3">
-                        <span class="badge bg-light text-dark">HTML</span>
-                        <span class="badge bg-light text-dark">CSS</span>
-                        <span class="badge bg-light text-dark">Bootstrap</span>
+                <div class="card text-center">
+                    <img src="images/realestate-preview.jpg" class="card-img-top" alt="Агентство недвижимости">
+                    <div class="card-body">
+                        <h5 class="card-title">Агентство недвижимости</h5>
+                        <p class="card-text">Многостраничный сайт с фильтрацией объектов и адаптивной вёрсткой.</p>
+                        <div class="tech-tags mb-3">
+                            <span class="badge bg-light text-dark">HTML</span>
+                            <span class="badge bg-light text-dark">CSS</span>
+                            <span class="badge bg-light text-dark">Bootstrap</span>
+                        </div>
+                        <a href="downloads/realestate.zip" class="btn download-btn">Скачать</a>
                     </div>
-                    <a href="downloads/realestate.zip" class="btn download-btn">Скачать</a>
                 </div>
             </div>
 
         </div>
     </div>
+
+    <!-- Блок "О проекте" -->
+    <div class="about-section text-center">
+        <div class="container">
+            <h2 class="mb-4">О платформе</h2>
+            <p class="lead">DevHub — это коллекция готовых решений для запуска сайтов. Идеально для разработчиков, фрилансеров и предпринимателей. Просто скачай, настрой и запусти!</p>
+        </div>
+    </div>
+
+    <!-- Футер -->
+    <footer class="footer text-center">
+        <div class="container">
+            <p>&copy; 2025 DevHub. Все права защищены.</p>
+            <p>
+                <a href="#">Контакты</a> | 
+                <a href="#">Политика конфиденциальности</a> | 
+                <a href="#">GitHub</a>
+            </p>
+        </div>
+    </footer>
 
 </body>
 </html>
